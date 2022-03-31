@@ -1,0 +1,35 @@
+{
+  "name": "parse-openapi",
+  "version": "0.0.1",
+  "description": "OpenAPI v3 parser",
+  "main": "./dist/index.js",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "uvu -r tsm src 'spec.ts$'",
+    "prebuild": "rm -rf dist",
+    "build": "tsc && cp src/*.d.ts dist",
+    "postbuild": "uvu -r tsm dist 'spec.js$'",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "openapi",
+    "parse",
+    "parser"
+  ],
+  "author": {
+    "email": "lars@webpro.nl",
+    "name": "Lars Kappert"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "camelcase": "^6.3.0",
+    "openapi-types": "^10.0.0",
+    "tsm": "^2.2.1",
+    "typescript": "^4.6.3",
+    "uvu": "^0.5.3"
+  }
+}
